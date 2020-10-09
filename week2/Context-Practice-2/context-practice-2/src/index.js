@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import {BookContextProvider} from "./bookContext"
 import './index.css'
-import book from "./bookRouter"
 
 ReactDOM.render(
     <BookContextProvider>
