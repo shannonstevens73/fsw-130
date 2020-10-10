@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {BookContextConsumer} from './bookContext'
+import React, {Component} from "react"
+import {BookContextConsumer} from "./bookContext"
 
 
 class App extends Component {
@@ -9,62 +9,56 @@ class App extends Component {
     return (
     
       <BookContextConsumer>
-        {({fullName, title, bookEdit, booklist, handleChange, booklistUpdate, bookDelete}) => (
+        {({fullName, title, booklist, handleChange, booklistUpdate}) => (
           <div>
-          <form id="form">
-            <input 
-            type = 'text'
-            name = 'fullName'
-            className = "inputs"
-            value = {fullName}
-            placeholder = "Author Name"
-            onChange={handleChange}
-            />
+              <form id="form">
 
-            <input 
-            type = 'text'
-            name = 'title'
-            className = "inputs"
-            value = {title}
-            placeholder = "Book Title"
-            onChange={handleChange}
-            />
+             
+                  <div>
+                    <input 
+                        type = "text"
+                        name = "fullName"
+                        className = "inputs"
+                        value = {fullName}
+                        placeholder = "Author Name"
+                        onChange={handleChange}
+                    />
+                  </div>
 
-            <br /><br />
+                  <div>
+                      <input 
+                          type = "text"
+                          name = "title"
+                          className = "inputs"
+                          value = {title}
+                          placeholder = "Book Title"
+                           onChange={handleChange}
+                      />
 
-            <button id="submitButton" onClick={(booklistUpdate)}>Submit</button>
-          </form>
+                      <button id="submitButton" onClick={(booklistUpdate)}>Submit</button>
+                    </div>  
 
-          <ol>
-            {booklist.map((bookInfo, index) => <li id={index} key={bookInfo}>
-              
-            <strong>Author: </strong>{bookInfo.fullName} 
-            
-            <strong>Title: </strong>{bookInfo.title}
+                    <br /><br />
 
-            <button id={index} onClick={(e) => bookEdit(e.target.id)}>Edit</button>
-            <button id={index} onClick={(e) => bookDelete(e.target.id)}>Delete</button>
+                    <div>
+                      <ol>
+                          {booklist.map((bookInfo, index) => <li id={index} key={bookInfo}>
+                          
+                            <div id="author">
+                              <strong>Author: </strong>{bookInfo.fullName} 
+                            </div>                          
 
-            <input 
-            type = 'text'
-            name = 'fullName'
-            className = "inputs"
-            // value = {fullName}
-            placeholder = "Author Name"
-            // onChange={handleChange}
-            />
+                            <div id="title">
+                              <strong>Title: </strong>{bookInfo.title}                    
+                            </div>
 
-            <input 
-            type = 'text'
-            name = 'title'
-            className = "inputs"
-            // value = {title}
-            placeholder = "Book Title"
-            // onChange={handleChange}
-            />
-            
-            </li>)}
-          </ol>
+                            <br /><br />                           
+
+                          </li>)}
+                      </ol>
+                  </div>
+                  
+              </form>
           
           </div>
         )}       

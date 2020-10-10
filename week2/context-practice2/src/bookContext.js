@@ -25,6 +25,7 @@ class BookContextProvider extends Component {
     }
 
     handleChange=(event) => {
+       
         event.preventDefault()
         const {name, value} = event.target
         this.setState({ 
@@ -35,31 +36,11 @@ class BookContextProvider extends Component {
       booklistUpdate=(event) => {
         event.preventDefault()
         this.setState({
-          booklist: this.state.booklist.concat({fullName: this.state.fullName, title: this.state.title})
+          booklist: this.state.booklist.concat({fullName: this.state.fullName, title: this.state.title}),
+          fullName: "",
+          title: ""
         })
-      }
-
-      bookEdit=(index) => {
-          console.log("edit", index)
-          console.log(document.getElementById(index).children)
-          var value1=(document.getElementById(index).children[4]).value
-          var value2=(document.getElementById(index).children[5]).value
-          var array=this.state.booklist
-          Object.assign(array[index], {fullName: value1, title: value2})
-          console.log(array)
-          this.setState({booklist: array})
-      }
-
-      bookDelete=(index) => {
-          console.log("edit", index)
-          console.log(document.getElementById(index))
-          var array=this.state.booklist
-          array.splice(index, 1)
-          console.log(array)
-          this.setState({booklist: array})
-      }
-
-  
+      } 
 
 
     render() {
@@ -70,9 +51,7 @@ class BookContextProvider extends Component {
                     fullName: this.state.fullName,
                     title: this.state.title, 
                     handleChange: this.handleChange,
-                    booklistUpdate: this.booklistUpdate,
-                    bookEdit: this.bookEdit,
-                    bookDelete: this.bookDelete
+                    booklistUpdate: this.booklistUpdate
                 }}>
                     {this.props.children}
             </Provider>
