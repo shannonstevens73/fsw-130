@@ -49,16 +49,19 @@ class BookContextProvider extends Component {
             title: this.state.title, 
             description: this.state.description,
             comment: this.state.comment
-          })
+          }),
+          cover: "",
+          title: "",
+          description: ""
         })
       }
 
       bookEdit=(index) => {
           console.log("edit", index)
           console.log(document.getElementById(index).children)
-          var value1=(document.getElementById(index).children[4]).value
-          var value2=(document.getElementById(index).children[5]).value
-          var value3=(document.getElementById(index).children[6]).value
+          var value1=(document.getElementById(index).children[5]).value
+          var value2=(document.getElementById(index).children[6]).value
+          var value3=(document.getElementById(index).children[7]).value
           var array=this.state.booklist
           Object.assign(array[index], {cover: value1, title: value2, description: value3})
           console.log(array)

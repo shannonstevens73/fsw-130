@@ -45,6 +45,7 @@ class App extends Component {
                 placeholder = "description"
                 onChange={handleChange}
                 /> 
+
                 
                <br /><br />
                 <button id="submitButton" onClick={(booklistUpdate)}>Submit</button>
@@ -53,9 +54,9 @@ class App extends Component {
           </form>
 
           <ol>
-              {booklist.map((bookInfo, index) => <li id={index} key={bookInfo}>
+              {booklist.map((bookInfo, index) => <li id={index} key={index}>
                 
-              <img src={bookInfo.cover} alt=""></img>
+              <img src={bookInfo.cover} alt="" />
 
               <br />
               
@@ -64,6 +65,14 @@ class App extends Component {
               <br />
 
               <p>{bookInfo.description}</p>
+
+              <input 
+                type = 'text'
+                name = 'cover'
+                // value = {cover}
+                placeholder = "url"
+                // onChange={handleChange}
+                />
 
               <input 
                 type = 'text'
@@ -81,13 +90,13 @@ class App extends Component {
                 // onChange={handleChange}
               />
 
-              <br />
+              <br /><br />
 
               <button id={index} onClick={(e) => bookEdit(e.target.id)}>Edit</button>
 
               <button id={index} onClick={(e) => bookDelete(e.target.id)}>Delete</button>              
 
-              <br />
+              <br /><br />
 
               <textarea
                 id="comment"
