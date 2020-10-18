@@ -1,46 +1,20 @@
-import React from 'react'
+import React from "react"
+import {connect} from "react-redux"
+import {timerStart, timerStop, lapCount} from "./redux"
 
 
-const redux = require("redux")
-
-
-
-
-
-function reducer(state = {count: 0}, action) {
-  // return new state based on the incoming action.type
-  switch(action.type) {
-      case "INCREMENT":
-          return {
-              count: state.count + 1
-          }
-      case "DECREMENT":
-          return {
-              count: state.count - 1
-          }
-      default:
-          return state
-  }
-}
-
-const store = redux.createStore(reducer)
-store.subscribe(() => {
-  console.log(store.getState())
-})
-
-
-
-function App() {
+function App(props) {
   return (
     <div>
 
-      <button>Start</button>
-      <button>Stop</button>
-      <button>Reset</button>
-      <button>Lap</button>
+      <h1>{props.time}</h1>
+      <button onClick={props.timerStart}>Start</button>
+      <button onClick={props.timerStop}>Stop</button>
+      <button onClick={props.timerStart}>Reset</button>
+      {/* <button onClick={props.decrement}>Lap</button> */}
      
     </div>
   )
 }
 
-export default App
+export default connect(state => ({count: state}), {increment, decrement})(App)
