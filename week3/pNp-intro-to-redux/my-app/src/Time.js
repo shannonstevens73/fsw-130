@@ -30,29 +30,24 @@ const timerState ={
     minutes: 0,
     seconds:0,
     milliseconds:0,
+    interval: 5000,
     timerState : ""
 }
 
-let milliseconds = 0
-   setInterval(() => {
-       milliseconds+= 5000
-    }, 5000)
-
 
 function reducer( state = timerState, action) {
-
+    
     switch(action.type) {
         case "START":
-           return {...timerState, timerState:action.type,milliseconds:milliseconds}
+           return {...timerState, timerState:action.type,milliseconds:state.milliseconds+state.interval}
         case "STOP":
-            return {...timerState, timerState:"STOP"}
+            return {...timerState, timerState:action.type}
         case "RESET":
-            milliseconds =0 
-                return {...timerState, timerState:action.type, milliseconds:milliseconds}
+                return {...timerState, timerState:action.type, milliseconds:0}
         case "LAP":
               return {...timerState, timerState:action.type}
         default:
-            return {...timerState, timerState:""}
+            return {...timerState, timerState:state.timerState}
     }
 }
 
