@@ -26,24 +26,7 @@ function reducer(state = initialState, action) {
                 contacts: [...state.contacts, action.payload]
             }
         case "REMOVE_CONTACT": 
-            // let updatedArr = state.contacts
-            //     updatedArr.splice(
-            //     name => {
-            //     console.log(name.name, "name")
-            //     console.log(action.payload.name, "action.payload")
-            //     console.log(name.name !== action.payload.name, "filter")
-            //     return (name !== action.payload)},
-                
-            //     age => {
-            //     console.log(age, "age")
-            //     return (age !== action.payload)},
-
-            //     phone => {
-            //     console.log(phone, "phone")
-            //     return (phone !== action.payload)},
-            // )
             state.contacts.splice(action.payload, 1)
-            // console.log(state.contacts, "array")    
             return {
                 ...state,
                 contacts: state.contacts
