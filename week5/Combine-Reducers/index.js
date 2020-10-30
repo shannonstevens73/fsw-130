@@ -1,0 +1,12 @@
+const store = require( "./redux/state")
+const {addMovie, deleteMovie, getAllMovies} = require( "./redux/movies")
+const {addTVShows, deleteTVShows, getAllTVShows} = require( "./redux/tvShows")
+
+store.dispatch(addMovie("The Lord of the Rings"))
+store.dispatch(addMovie("Beauty and the Beast"))
+store.dispatch(addTVShows("Lost"))
+store.dispatch(addTVShows("Star Trek"))
+store.dispatch(getAllMovies())
+store.dispatch(getAllTVShows())
+store.dispatch(deleteMovie("Beauty and the Beast"))
+store.dispatch(deleteTVShows("Star Trek"))
