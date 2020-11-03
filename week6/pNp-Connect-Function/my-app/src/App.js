@@ -10,74 +10,72 @@ function App(props) {
         const {name, value} = event.target
         console.log(props)
         props.setInputs(name, value)
-        // setState({
-        //     [name]: value
-        // })
     }
     
     const onclickUpdate = (event) => {
       event.preventDefault()
       props.addContact()
-    //   setState({
-    //     contacts: []
-    //   })
     }
 
     const onclickDelete = (event, index) => {
       event.preventDefault()
       props.removeContact(index)
-    //   setState({
-    //     contacts: []
-    //   })
     }
 
 
     return (
         <div>
-        <form>
-            <input 
-                id="input"
-                type="text" 
-                name="name"
-                value={props.name}                  
-                placeholder="name" 
-                onChange={handleChange} 
-            />
-            <br />
-            <h1>{props.name}</h1>
-            <br />
+            <form id="myform">
+            <h2>My Contact List</h2>
 
-            <input 
-                id="input"
-                type="text"                  
-                name="phone"
-                value={props.phone}
-                placeholder="phone" 
-                onChange={handleChange} 
-            />
-            <br />
-            <h1>{props.phone}</h1>
-            <br />
+                <input 
+                    id="input"
+                    type="text" 
+                    name="name"
+                    value={props.name}                  
+                    placeholder="name" 
+                    onChange={handleChange} 
+                />
+                <br />
+                <p>{props.name}</p>
+                <br />
 
-            <input 
-                id="input"
-                type="text" 
-                name="email"
-                value={props.email}                  
-                placeholder="email" 
-                onChange={handleChange} 
-            />
-            <br />
-            <h1>{props.email}</h1>
-            <br />
-            <button id="button" onClick={onclickUpdate}>Submit</button> 
-        </form>
+                <input 
+                    id="input"
+                    type="text"                  
+                    name="phone"
+                    value={props.phone}
+                    placeholder="phone" 
+                    onChange={handleChange} 
+                />
+                <br />
+                <p>{props.phone}</p>
+                <br />
 
-        {props.contacts.map((contact, index) => 
-        <div><p>{contact.name}</p><p>{contact.phone}</p><p>{contact.email}</p>
-        <button id="button" onClick={(event) => onclickDelete (event, index) }>Delete</button>
-        </div>
-        )}
+                <input 
+                    id="input"
+                    type="text" 
+                    name="email"
+                    value={props.email}                  
+                    placeholder="email" 
+                    onChange={handleChange} 
+                />
+                <br />
+                <p>{props.email}</p>
+                <br />
+                <button id="submitButton" onClick={onclickUpdate}>Submit</button> 
+            </form>            
+
+            {props.contacts.map((contact, index) => 
+            <div id="contacts">
+                
+                <p>{contact.name}</p>
+                <p>{contact.phone}</p>
+                <p>{contact.email}</p>
+
+                <button id="deleteButton" onClick={(event) => onclickDelete (event, index) }>Delete</button>
+            </div>
+            )}
 
 
 

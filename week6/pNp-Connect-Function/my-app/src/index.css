@@ -1,13 +1,30 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  background-color: lightgray;
+  color: navy;
+  font-family: sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#myform {
+  text-align: center;
+}
+
+input {
+  background-color: white;
+}
+
+p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#contacts {
+  text-align: center;
+}
+
+#submitButton {
+  background-color: lightsteelblue;
+}
+
+#deleteButton {
+  background-color: lightcoral;
 }

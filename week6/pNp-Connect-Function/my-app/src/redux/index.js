@@ -40,7 +40,7 @@ export function reducer(state = initialState, action) {
                 email: ""
             }
         case "REMOVE_CONTACT":
-            let newContact = state.contacts 
+            let newContact = [...state.contacts] 
             newContact.splice(action.payload, 1)
             return {
                 ...state,
@@ -48,11 +48,6 @@ export function reducer(state = initialState, action) {
             }
         case "SET_INPUTS": 
             console.log(action.payload)
-            // let newValue = (action.payload.name === "name" ? state.name += action.payload.value:
-            //                 action.payload.name === "phone" ? state.phone += action.payload.value:
-            //                 action.payload.name === "email" ? state.email += action.payload.value:
-            // console.log(action.payload.name))
-            // console.log(newValue)
             return {
                 ...state,
                 [action.payload.name] : action.payload.value
