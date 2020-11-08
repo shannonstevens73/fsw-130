@@ -1,11 +1,9 @@
-  
 import { createStore } from 'redux'
 const redux = require("redux")
 
 export function addMovie() {
     return {
-        type: "ADD_MOVIE",
-        // payload: movie
+        type: "ADD_MOVIE"
     }
 }
 
@@ -34,17 +32,15 @@ const initialState = {
     movie: ""
 }
 
-export function moviesReducer(state = initialState, action) {
+export default function moviesReducer(state = initialState, action) {
     switch(action.type) {
         case "ADD_MOVIE":
             return {
                 ...state,
                 movies: [...state.movies, state.movie], movie: ""
             }
-        case "DELETE_MOVIE":  
-        console.log(state)           
+        case "DELETE_MOVIE":          
         let newMovies = [...state.movies] 
-        console.log(newMovies)
         newMovies.splice(action.payload, 1)
         return {
             ...state,
@@ -53,7 +49,6 @@ export function moviesReducer(state = initialState, action) {
         case "GET_MOVIES":
             return [...state]
         case "SET_INPUTS": 
-            console.log(action.payload)
             return {
                 ...state,
                 [action.payload.name] : action.payload.value
@@ -63,6 +58,6 @@ export function moviesReducer(state = initialState, action) {
     }
 }
 
-const store = createStore(moviesReducer)
-store.subscribe(() => console.log(store.getState()))
-export default store
+// const store = createStore(moviesReducer)
+// store.subscribe(() => console.log(store.getState()))
+// export default store

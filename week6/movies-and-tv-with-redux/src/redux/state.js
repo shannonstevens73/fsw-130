@@ -1,11 +1,11 @@
 const redux = require("redux")
 const { combineReducers, createStore } = redux
-const { moviesReducer } = require("./movies")
-const { tvShowsReducer } = require("./tvShows")
+const  moviesReducer  = require("./movies")
+const  tvShowsReducer  = require("./tvShows")
 
 const rootReducer = combineReducers({
-    movies: moviesReducer,
-    tvShows: tvShowsReducer
+    movies: moviesReducer.default,
+    tvShows: tvShowsReducer.default
 })
 
 const store = createStore(rootReducer)
