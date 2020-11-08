@@ -24,9 +24,10 @@ function TV(props) {
         <div>
 
             <form>
-            <h2>My TV List</h2>
+            <h2 className="heading">My TV List</h2>
 
                 <input 
+                    id="tvText"
                     type="text" 
                     name="show"
                     value={props.show}                  
@@ -34,7 +35,7 @@ function TV(props) {
                     onChange={handleChange} 
                 />
                 <br />
-                <p>{props.show}</p>
+                <p id="text">{props.show}</p>
                 <br />
 
                 <button id="submitButton" onClick={onclickUpdate}>Submit</button> 
@@ -43,7 +44,7 @@ function TV(props) {
             {props.tvShows.map((tvShows, index) => 
             <div key={index}>
                 
-                <p>{tvShows}</p>
+                <p id="text">{tvShows}</p>
 
                 <button id="deleteButton" onClick={(event) => onclickDelete (event, index) }>Delete</button>
             </div>

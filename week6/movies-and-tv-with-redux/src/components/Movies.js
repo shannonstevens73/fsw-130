@@ -24,9 +24,10 @@ function Movies(props) {
         <div>
 
             <form>
-            <h2>My Movie List</h2>
+            <h2 className="heading">My Movie List</h2>
 
                 <input 
+                    id="movieText"
                     type="text" 
                     name="movie"
                     value={props.movie}                  
@@ -43,7 +44,7 @@ function Movies(props) {
             {props.movies.map((movies, index) => 
             <div key={index}>
                 
-                <p>{movies}</p>
+                <p id="text">{movies}</p>
 
                 <button id="deleteButton" onClick={(event) => onclickDelete (event, index) }>Delete</button>
             </div>

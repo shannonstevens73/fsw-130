@@ -1,15 +1,81 @@
-.nav {
+body {
+    text-align: center;
+    background-color: rgb(231, 227, 227);
+  }
+  .nav {
+    position: absolute;
+    background-image: url('https://images.unsplash.com/photo-1570385404967-fe4e1b48454b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');
+    font-family: 'Big Shoulders Stencil Display', cursive;
     display: flex;
     justify-content: space-evenly;
     vertical-align: middle;
-    height: 2em;
-    font-size: 15px;    
+    height: 8em;
+    font-size: 1.6em;   
+    color: whitesmoke; 
     list-style-type: none;
-    margin-top: 10px;
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
-}
+  }
+  .movieLink {
+    color: whitesmoke;
+    margin-top: 20px;
+    border-top: 2px solid whitesmoke;
+  }
+  .movieLink:hover {
+    color: rgb(250, 193, 86);
+    border-top: rgb(250, 193, 86);
+  }
+  .tvLink {
+    color: whitesmoke;
+    margin-top: 20px;
+    border-top: 2px solid whitesmoke;
+  }
+  .tvLink:hover {
+    color: rgb(250, 193, 86);
+    border-top: rgb(250, 193, 86);
+  }
+  .heading {
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    margin-top: 240px;
+    font-size: 2em;
+  }
+  #deleteButton {
+    font-family: 'Arimo', sans-serif;
+    background-color: rgb(250, 193, 86);
+    border: none;
+    height: 2em;
+    color: whitesmoke;
+    width: 6em;
+    cursor: pointer;
+  }
+  #deleteButton:hover {
+    background-color: grey;
+  }
+  #submitButton {
+    font-family: 'Arimo', sans-serif;
+    background-color: rgb(117, 89, 143);
+    border: none;
+    height: 2em;
+    width: 6em;
+    color: whitesmoke;
+    cursor: pointer;
+  }
+  #submitButton:hover {
+    background-color: grey;
+  }
+  #tvText {
+    font-family: 'Arimo', sans-serif;
+    height: 2em;
+  }
+  #movieText {
+    font-family: 'Arimo', sans-serif;
+    height: 2em;
+  }
+  #text {
+    font-family: 'Arimo', sans-serif;
+    color: rgb(83, 77, 77);
+  }
 
 
